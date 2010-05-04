@@ -6,6 +6,9 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: org.quickcheck.integration.Activator
 Bundle-Vendor: QuviQ AB
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text;bundle-version="3.5.2",
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.erlide.core;bundle-version="0.7.5"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

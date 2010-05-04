@@ -169,14 +169,16 @@
                      style="push">
                </command>
                <separator
-                     name="org.quickcheck.menu.properties.separator0">
+                     name="org.quickcheck.menu.properties.separator0"
+                     visible="true">
                </separator>
                <command
                      commandId="org.quickcheck.properties.property"
                      style="push">
                </command>
                <separator
-                     name="org.quickcheck.menu.properties.separator1">
+                     name="org.quickcheck.menu.properties.separator1"
+                     visible="true">
                </separator>
                <command
                      commandId="org.quickcheck.properties.macroimplies"
@@ -203,7 +205,8 @@
                      style="push">
                </command>
 				<separator
-                     name="org.quickcheck.menu.properties.separator2">
+          name="org.quickcheck.menu.properties.separator2"
+          visible="true">
                </separator>
                <command
                      commandId="org.quickcheck.properties.functionaggregate"
