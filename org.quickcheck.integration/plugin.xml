@@ -82,6 +82,292 @@
             id="org.quickcheck.properties.functionmeasure"
             name="Function measure">
       </command>
+      <category
+            id="org.quickcheck.categories.generators"
+            name="Generators">
+      </category>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.sizedgenerator"
+            name="Sized generator">
+      </command>
+<!-- Generators/Macro --> 
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.LET"
+            name="Macro LET">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.SIZED"
+            name="Macro SIZED">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.SUCHTHAT"
+            name="Macro SUCHTHAT">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.SUCHTHATMAYBE"
+            name="Macro SUCHTHATMAYBE">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.SHRINK"
+            name="Macro SHRINK">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.SHRINKWHILE"
+            name="Macro SHRINKWHILE">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.LETSHRINK"
+            name="Macro LETSHRINK">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.generators.macro.LAZY"
+            name="Macro LAZY">
+      </command>
+<!-- Generators/Functions -->     
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.bool"
+            name="Function bool">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.char"
+            name="Function char">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.choose"
+            name="Function choose">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.default"
+            name="Function default">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.elements"
+            name="Function elements">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.eval1"
+            name="Function eval/1">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.eval2"
+            name="Function eval/2">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.fault"
+            name="Function fault">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.fault-rate"
+            name="Function fault-rate">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.frequency"
+            name="Function frequency">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.function0"
+            name="Function function0">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.function1"
+            name="Function function1">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.function2"
+            name="Function function2">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.function3"
+            name="Function function3">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.function4"
+            name="Function function4">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.growingelements"
+            name="Function growingelements">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.includeif"
+            name="Function includeif">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.int"
+            name="Function int">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.largeint"
+            name="Function largeint">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.less_faulty"
+            name="Function less_faulty">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.list"
+            name="Function list">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.maybe"
+            name="Function maybe">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.more_faulty"
+            name="Function more_faulty">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.nat"
+            name="Function nat">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.no_faults"
+            name="Function no_faults">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.noshrink"
+            name="Function noshrink">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.oneof"
+            name="Function oneof">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.open"
+            name="Function open">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.orderedlist"
+            name="Function orderedlist">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.parameter1"
+            name="Function parameter/1">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.parameter2"
+            name="Function parameter/2">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.peek"
+            name="Function peek">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.prop_shrinks_without_duplicates"
+            name="Function prop_shrinks_without_duplicates">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.real"
+            name="Function real">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.resize"
+            name="Function resize">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.return"
+            name="Function return">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.sample"
+            name="Function sample">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.sampleshrink"
+            name="Function sampleshrink">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.seal"
+            name="Function seal">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.shrink_int"
+            name="Function shrink_int">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.hrink_list"
+            name="Function hrink_list">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.shrink_without_duplicates"
+            name="Function shrink_without_duplicates">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.timeout"
+            name="Function timeout">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.vector"
+            name="Function vector">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.weighted_default"
+            name="Function weighted_default">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.with_parameter"
+            name="Function with_parameter">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.with_parameters"
+            name="Function with_parameters">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -144,6 +430,228 @@
       <handler
             class="org.quickcheck.integration.handlers.PropertiesHandler"
             commandId="org.quickcheck.properties.functionmeasure">
+      </handler>
+<!--Generators/MACROS-->
+       <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.LET">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.SIZED">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.SUCHTHAT">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.SUCHTHATMAYBE">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.SHRINK">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.SHRINKWHILE">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.LETSHRINK">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.generators.macro.LAZY">
+      </handler>
+      <!-- Generators/Functions -->     
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.bool">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.char">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.choose">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.default">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.elements">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.eval1">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.eval2">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.fault">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.fault-rate">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.frequency">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.function0">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.function1">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.function2">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.function3">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.function4">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.growingelements">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.includeif">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.int">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.largeint">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.less_faulty">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.list">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.maybe">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.more_faulty">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.nat">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.no_faults">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.noshrink">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.oneof">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.open">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.orderedlist">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.parameter1">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.parameter2">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.peek">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.prop_shrinks_without_duplicates">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.real">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.resize">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.return">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.sample">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.sampleshrink">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.seal">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.shrink_int">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.hrink_list">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.shrink_without_duplicates">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.timeout">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.vector">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.weighted_default">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.with_parameter">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.with_parameters">
       </handler>
    </extension>
    <extension
@@ -232,6 +740,228 @@
             <menu
                   label="Generators"
                   mnemonic="G">
+                  <!-- Generators/Macros -->     
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.LET">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.SIZED">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.SUCHTHAT">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.SUCHTHATMAYBE">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.SHRINK">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.SHRINKWHILE">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.LETSHRINK">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.generators.macro.LAZY">
+      </command>
+	      <!-- Generators/Functions -->     
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.bool">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.char">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.choose">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.default">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.elements">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.eval1">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.eval2">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.fault">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.fault-rate">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.frequency">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.function0">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.function1">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.function2">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.function3">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.function4">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.growingelements">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.includeif">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.int">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.largeint">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.less_faulty">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.list">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.maybe">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.more_faulty">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.nat">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.no_faults">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.noshrink">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.oneof">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.open">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.orderedlist">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.parameter1">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.parameter2">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.peek">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.prop_shrinks_without_duplicates">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.real">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.resize">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.return">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.sample">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.sampleshrink">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.seal">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.shrink_int">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.hrink_list">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.shrink_without_duplicates">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.timeout">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.vector">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.weighted_default">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.with_parameter">
+      </command>
+      <command
+      		style="push"
+            commandId="org.quickcheck.function.with_parameters">
+      </command>
             </menu>
             <menu
                   label="State machines specs"
