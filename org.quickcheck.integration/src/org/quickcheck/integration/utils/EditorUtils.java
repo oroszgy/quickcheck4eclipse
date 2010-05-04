@@ -106,6 +106,9 @@ public class EditorUtils {
 		IDocument doc = dp.getDocument(editor.getEditorInput());
 		try {
 			String original = doc.get(offset, length);
+			// ident original
+			original = original.replace(EditorUtils.NEWLINE,
+					EditorUtils.NEWLINE + EditorUtils.TAB);
 			doc.replace(offset, length, before + original + after);
 		} catch (BadLocationException e) {
 			e.printStackTrace();
@@ -162,7 +165,7 @@ public class EditorUtils {
 		return "";
 	}
 
-	public static StringPair toCompass(String name, String title,
+	public static StringPair compassWithMacro(String name, String title,
 			String... parameters) throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
 		if (parameters != null && parameters.length > 0)
@@ -171,9 +174,21 @@ public class EditorUtils {
 		for (String s : input)
 			before += s + EditorUtils.COMMA;
 		before += EditorUtils.NEWLINE + EditorUtils.TAB;
-		String after = ").";
+		String after = ")";
 		return new StringPair(before, after);
 
 	}
 
+	public static String createMacro(String name, String title,
+			String... parameters) throws NullInputException {
+		ArrayList<String> input = new ArrayList<String>();
+		if (parameters != null && parameters.length > 0)
+			input = DynamicInputDialog.run(title, parameters);
+		String ret = name + "(";
+		for (String s : input)
+			ret += s + EditorUtils.COMMA;
+		// ret += EditorUtils.NEWLINE + EditorUtils.TAB;
+		ret += ")";
+		return ret;
+	}
 }

@@ -311,7 +311,12 @@
       <command
       		categoryId="org.quickcheck.categories.generators"
             id="org.quickcheck.function.return"
-            name="Function return">
+            name="Function ">
+      </command>
+      <command
+      		categoryId="org.quickcheck.categories.generators"
+            id="org.quickcheck.function.return"
+            name="Function ">
       </command>
       <command
       		categoryId="org.quickcheck.categories.generators"
@@ -355,8 +360,8 @@
       </command>
       <command
       		categoryId="org.quickcheck.categories.generators"
-            id="org.quickcheck.function.weighted_default"
-            name="Function weighted_default">
+            id="org.quickcheck.function.wheighted_default"
+            name="Function wheighted_default">
       </command>
       <command
       		categoryId="org.quickcheck.categories.generators"
@@ -611,6 +616,10 @@
       </handler>
       <handler
       		class="org.quickcheck.integration.handlers.GeneratorsHandler"
+            commandId="org.quickcheck.function.return">
+      </handler>
+      <handler
+      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
             commandId="org.quickcheck.function.sample">
       </handler>
       <handler
@@ -643,7 +652,7 @@
       </handler>
       <handler
       		class="org.quickcheck.integration.handlers.GeneratorsHandler"
-            commandId="org.quickcheck.function.weighted_default">
+            commandId="org.quickcheck.function.wheighted_default">
       </handler>
       <handler
       		class="org.quickcheck.integration.handlers.GeneratorsHandler"
@@ -774,6 +783,10 @@
             commandId="org.quickcheck.generators.macro.LAZY">
       </command>
 	      <!-- Generators/Functions -->     
+	      <separator
+             name="org.quickcheck.generators.separator0"
+             visible="true">
+      </separator>
       <command
       		style="push"
             commandId="org.quickcheck.function.bool">
@@ -920,6 +933,10 @@
       </command>
       <command
       		style="push"
+            commandId="org.quickcheck.function.return">
+      </command>
+      <command
+      		style="push"
             commandId="org.quickcheck.function.sample">
       </command>
       <command
@@ -952,7 +969,7 @@
       </command>
       <command
       		style="push"
-            commandId="org.quickcheck.function.weighted_default">
+            commandId="org.quickcheck.function.wheighted_default">
       </command>
       <command
       		style="push"

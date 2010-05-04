@@ -59,7 +59,7 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 			after = ").";
 
 		} else if (id.equals("macroimplies")) {
-			ret = EditorUtils.toCompass("?IMPLIES", "Macro IMPLIES",
+			ret = EditorUtils.compassWithMacro("?IMPLIES", "Macro IMPLIES",
 					"Precondition");
 			// input = DynamicInputDialog.run("Macro IMPLIES", "Precondition");
 			// before = "?IMPLIES(" + input.get(0);
@@ -68,7 +68,7 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 			// after = ").";
 
 		} else if (id.equals("macroforall")) {
-			ret = EditorUtils.toCompass("?FORALL", "Macro FORALL", "Value",
+			ret = EditorUtils.compassWithMacro("?FORALL", "Macro FORALL", "Value",
 					"Generator");
 			// input = DynamicInputDialog
 			// .run("Macro FORALL", "Value", "Generator");
@@ -79,35 +79,35 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 
 		} else if (id.equals("macrowhenfail")) {
 			ret = EditorUtils
-					.toCompass("?WHENFAIL", "Macro WHENFAIL", "Action");
+					.compassWithMacro("?WHENFAIL", "Macro WHENFAIL", "Action");
 
 		} else if (id.equals("macrotrapexit")) {
-			ret = EditorUtils.toCompass("?TRAPEXIT", "Macro TRAPEXIT",
+			ret = EditorUtils.compassWithMacro("?TRAPEXIT", "Macro TRAPEXIT",
 					new String[0]);
 
 		} else if (id.equals("macroalways")) {
-			ret = EditorUtils.toCompass("?ALWAYS", "Macro ALWAYS",
+			ret = EditorUtils.compassWithMacro("?ALWAYS", "Macro ALWAYS",
 					"Number of times to test");
 
 		} else if (id.equals("macrosometimes")) {
-			ret = EditorUtils.toCompass("?SOMETIMES", "Macro SOMETIMES",
+			ret = EditorUtils.compassWithMacro("?SOMETIMES", "Macro SOMETIMES",
 					"Number of times to test");
 
 		} else if (id.equals("functionaggregate")) {
-			ret = EditorUtils.toCompass("aggregate", "Function aggregate",
+			ret = EditorUtils.compassWithMacro("aggregate", "Function aggregate",
 					"List of terms to aggregate");
 
 		} else if (id.equals("functionclassify")) {
-			ret = EditorUtils.toCompass("classify", "Function classify",
+			ret = EditorUtils.compassWithMacro("classify", "Function classify",
 					"Boolean expression", "Label");
 		} else if (id.equals("functioncollect")) {
-			ret = EditorUtils.toCompass("collect", "Function collect",
+			ret = EditorUtils.compassWithMacro("collect", "Function collect",
 					"Collected term");
 		} else if (id.equals("functionfails")) {
-			ret = EditorUtils.toCompass("fails", "Function fails",
+			ret = EditorUtils.compassWithMacro("fails", "Function fails",
 					new String[0]);
 		} else if (id.equals("functionmeasure")) {
-			ret = EditorUtils.toCompass("measure", "Function measure", "Label",
+			ret = EditorUtils.compassWithMacro("measure", "Function measure", "Label",
 					"Term (or list of terms) to measure");
 		}
 		if (ret != null)
