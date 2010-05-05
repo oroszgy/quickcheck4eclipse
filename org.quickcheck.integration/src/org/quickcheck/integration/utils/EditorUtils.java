@@ -44,6 +44,11 @@ public class EditorUtils {
 		return offset;
 	}
 
+	/**
+	 * Returns the actual selection's length
+	 * 
+	 * @return
+	 */
 	static public int getActiveSelectionLength() {
 		int length = ((TextSelection) getEditor().getSelectionProvider()
 				.getSelection()).getLength();
@@ -131,6 +136,11 @@ public class EditorUtils {
 		return editor;
 	}
 
+	/**
+	 * Returns the currently opened filename
+	 * 
+	 * @return
+	 */
 	static public String getFileName() {
 
 		String moduleName = getEditor().getEditorInput().getName();
@@ -138,24 +148,49 @@ public class EditorUtils {
 		return moduleName;
 	}
 
+	/**
+	 * Returns the currently opened module name
+	 * 
+	 * @return
+	 */
 	static public String getModuleName() {
 		return getFileName().substring(0, getFileName().lastIndexOf("."));
 	}
 
+	/**
+	 * Returns the system user name
+	 * 
+	 * @return
+	 */
 	static public String getAuthorName() {
 		return getUserName();
 	}
 
+	/**
+	 * Returns the current date
+	 * 
+	 * @return
+	 */
 	static public String getDate() {
 		DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.UK);
 		Date date = new Date();
 		return dateFormat.format(date);
 	}
 
+	/**
+	 * Returns the the system's user name
+	 * 
+	 * @return
+	 */
 	static public String getUserName() {
 		return System.getProperty("user.name");
 	}
 
+	/**
+	 * Returns the machine name
+	 * 
+	 * @return
+	 */
 	static public String getMachineName() {
 		try {
 			return InetAddress.getLocalHost().getHostName();
@@ -165,20 +200,97 @@ public class EditorUtils {
 		return "";
 	}
 
+	/**
+	 * Compass the current selection with the given macro and parameters
+	 * 
+	 * @param name
+	 *            macro name
+	 * @param title
+	 *            input dialog box title
+	 * @param originalOrdinalNumber
+	 *            the original selection place between the parameters
+	 * @param parameters
+	 *            macro parameters
+	 * @return
+	 * @throws NullInputException
+	 *             if the user press cancel in the input dialog
+	 */
 	public static StringPair compassWithMacro(String name, String title,
-			String... parameters) throws NullInputException {
+			OrdinalNumber originalOrdinalNumber, String... parameters)
+			throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
+		String after = "";
+		String before = "";
 		if (parameters != null && parameters.length > 0)
 			input = DynamicInputDialog.run(title, parameters);
-		String before = name + "(";
-		for (String s : input)
-			before += s + EditorUtils.COMMA;
-		before += EditorUtils.NEWLINE + EditorUtils.TAB;
-		String after = ")";
+		before += name + "(";
+		if (originalOrdinalNumber.equals(OrdinalNumber.Last)) {
+			for (String s : input)
+				before += s + EditorUtils.COMMA;
+			before += EditorUtils.NEWLINE + EditorUtils.TAB;
+		} else {
+			int n = originalOrdinalNumber.getValue();
+			for (int i = 0; i < n; ++i) {
+				before += input.get(i) + EditorUtils.COMMA;
+			}
+			after += EditorUtils.COMMA;
+			for (int i = n; i < input.size(); ++i) {
+				after += input.get(i);
+				if (i < input.size() - 1)
+					after += EditorUtils.COMMA;
+			}
+		}
+		after += ")";
 		return new StringPair(before, after);
 
 	}
 
+	/**
+	 * Compass the current selection with the given macro
+	 * 
+	 * @param name
+	 *            macro name
+	 * @param title
+	 * @return
+	 * @throws NullInputException
+	 */
+	public static StringPair compassWithMacro(String name, String title)
+			throws NullInputException {
+		return compassWithMacro(name, title, new String[0]);
+	}
+
+	/**
+	 * Compass the current selection with the given macro name and parameters.
+	 * The original selection will be the last parameter in the macro.
+	 * 
+	 * @param name
+	 *            macro name
+	 * @param title
+	 *            input dialog title
+	 * @param parameters
+	 *            macro parameters
+	 * @return
+	 * @throws NullInputException
+	 *             if the user press cancel in the inpu dialog
+	 */
+	public static StringPair compassWithMacro(String name, String title,
+			String... parameters) throws NullInputException {
+		return compassWithMacro(name, title, OrdinalNumber.Last, parameters);
+	}
+
+	/**
+	 * Creates a macro with the given name and parameters
+	 * 
+	 * @param name
+	 *            macro name
+	 * @param title
+	 *            input dialog box title
+	 * @param parameters
+	 *            macro parameters name
+	 * @return
+	 * @throws NullInputException
+	 *             if the user press the cancel button in the input dialog
+	 */
 	public static String createMacro(String name, String title,
 			String... parameters) throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
@@ -191,4 +303,20 @@ public class EditorUtils {
 		ret += ")";
 		return ret;
 	}
+
+	/**
+	 * Creates a single macro with the given name, without any parameters
+	 * 
+	 * @param name
+	 *            macro name
+	 * @param title
+	 * @return
+	 * @throws NullInputException
+	 */
+	public static String createMacro(String name, String title)
+			throws NullInputException {
+		return createMacro(name, title, new String[0]);
+
+	}
+
 }
