@@ -311,12 +311,7 @@
       <command
       		categoryId="org.quickcheck.categories.generators"
             id="org.quickcheck.function.return"
-            name="Function ">
-      </command>
-      <command
-      		categoryId="org.quickcheck.categories.generators"
-            id="org.quickcheck.function.return"
-            name="Function ">
+            name="Function return">
       </command>
       <command
       		categoryId="org.quickcheck.categories.generators"
@@ -373,6 +368,10 @@
             id="org.quickcheck.function.with_parameters"
             name="Function with_parameters">
       </command>
+      <category
+            id="org.quickcheck.categories.statemachinespecs"
+            name="State machine specs">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -609,10 +608,6 @@
       <handler
       		class="org.quickcheck.integration.handlers.GeneratorsHandler"
             commandId="org.quickcheck.function.resize">
-      </handler>
-      <handler
-      		class="org.quickcheck.integration.handlers.GeneratorsHandler"
-            commandId="org.quickcheck.function.return">
       </handler>
       <handler
       		class="org.quickcheck.integration.handlers.GeneratorsHandler"
@@ -926,10 +921,6 @@
       <command
       		style="push"
             commandId="org.quickcheck.function.resize">
-      </command>
-      <command
-      		style="push"
-            commandId="org.quickcheck.function.return">
       </command>
       <command
       		style="push"

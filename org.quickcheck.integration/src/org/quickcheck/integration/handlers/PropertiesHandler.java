@@ -36,10 +36,10 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
 			before += "-module(" + EditorUtils.getModuleName() + ")."
 					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
-			before += getInsertionString("includeeqc") + EditorUtils.NEWLINE
-					+ EditorUtils.NEWLINE;
-			before += getInsertionString("exportall") + EditorUtils.NEWLINE
-					+ EditorUtils.NEWLINE;
+			before += getInsertionString("includeeqc").toString()
+					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
+			before += getInsertionString("exportall").toString()
+					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
 
 		} else if (id.equals("includeeqc")) {
 			before = "-include_lib(\"eqc/include/eqc.hrl\").";
@@ -68,8 +68,8 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 			// after = ").";
 
 		} else if (id.equals("macroforall")) {
-			ret = EditorUtils.compassWithMacro("?FORALL", "Macro FORALL", "Value",
-					"Generator");
+			ret = EditorUtils.compassWithMacro("?FORALL", "Macro FORALL",
+					"Value", "Generator");
 			// input = DynamicInputDialog
 			// .run("Macro FORALL", "Value", "Generator");
 			// before = "?FORALL(" + input.get(0) + EditorUtils.COMMA
@@ -78,8 +78,8 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 			// after = ").";
 
 		} else if (id.equals("macrowhenfail")) {
-			ret = EditorUtils
-					.compassWithMacro("?WHENFAIL", "Macro WHENFAIL", "Action");
+			ret = EditorUtils.compassWithMacro("?WHENFAIL", "Macro WHENFAIL",
+					"Action");
 
 		} else if (id.equals("macrotrapexit")) {
 			ret = EditorUtils.compassWithMacro("?TRAPEXIT", "Macro TRAPEXIT",
@@ -94,8 +94,8 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 					"Number of times to test");
 
 		} else if (id.equals("functionaggregate")) {
-			ret = EditorUtils.compassWithMacro("aggregate", "Function aggregate",
-					"List of terms to aggregate");
+			ret = EditorUtils.compassWithMacro("aggregate",
+					"Function aggregate", "List of terms to aggregate");
 
 		} else if (id.equals("functionclassify")) {
 			ret = EditorUtils.compassWithMacro("classify", "Function classify",
@@ -107,8 +107,8 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 			ret = EditorUtils.compassWithMacro("fails", "Function fails",
 					new String[0]);
 		} else if (id.equals("functionmeasure")) {
-			ret = EditorUtils.compassWithMacro("measure", "Function measure", "Label",
-					"Term (or list of terms) to measure");
+			ret = EditorUtils.compassWithMacro("measure", "Function measure",
+					"Label", "Term (or list of terms) to measure");
 		}
 		if (ret != null)
 			return ret;
