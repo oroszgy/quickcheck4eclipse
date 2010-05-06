@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.quickcheck.integration.ui.DynamicInputDialog;
 import org.quickcheck.integration.ui.NullInputException;
 import org.quickcheck.integration.utils.EditorUtils;
-import org.quickcheck.integration.utils.StringPair;
+import org.quickcheck.integration.utils.InsertionStringPair;
 
 public class PropertiesHandler extends AbstractQuickCheckHandler {
 
@@ -17,34 +17,23 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 	}
 
 	@Override
-	protected StringPair getInsertionString(String id)
+	protected InsertionStringPair getInsertionString(String id)
 			throws NullInputException {
 		String before = "";
 		String after = "";
 		ArrayList<String> input;
-		StringPair ret = null;
+		InsertionStringPair ret = null;
 		if (id.equals("fullmoduleheader")) {
-			String userAtMachine = "<" + EditorUtils.getUserName() + "@"
-					+ EditorUtils.getMachineName() + ">";
-			before = "%%% File\t: " + EditorUtils.getFileName()
-					+ EditorUtils.NEWLINE;
-			before += "%%% Author\t: " + EditorUtils.getAuthorName() + " "
-					+ userAtMachine + EditorUtils.NEWLINE;
-			before += "%%% Description\t: " + EditorUtils.NEWLINE;
-			before += "%%% Created\t: " + EditorUtils.getDate() + " by "
-					+ EditorUtils.getAuthorName() + " " + userAtMachine
-					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
-			before += "-module(" + EditorUtils.getModuleName() + ")."
-					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
+			before = getHeader();
 			before += getInsertionString("includeeqc").toString()
 					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
 			before += getInsertionString("exportall").toString()
 					+ EditorUtils.NEWLINE + EditorUtils.NEWLINE;
 
 		} else if (id.equals("includeeqc")) {
-			before = "-include_lib(\"eqc/include/eqc.hrl\").";
+			before = getIncludeEqc();
 		} else if (id.equals("exportall")) {
-			before = "-compile(export_all).";
+			before = getCompileAll();
 
 		} else if (id.equals("property")) {
 			input = DynamicInputDialog.run("Properties",
@@ -112,6 +101,6 @@ public class PropertiesHandler extends AbstractQuickCheckHandler {
 		}
 		if (ret != null)
 			return ret;
-		return new StringPair(before, after);
+		return new InsertionStringPair(before, after);
 	}
 }

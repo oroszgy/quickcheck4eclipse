@@ -17,6 +17,13 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
+import org.erlide.core.erlang.ErlModelException;
+import org.erlide.core.erlang.ErlangCore;
+import org.erlide.core.erlang.IErlElement;
+import org.erlide.core.erlang.IErlFunctionClause;
+import org.erlide.core.erlang.IErlMember;
+import org.erlide.core.erlang.IErlModule;
+import org.erlide.core.erlang.ISourceRange;
 import org.quickcheck.integration.ui.DynamicInputDialog;
 import org.quickcheck.integration.ui.NullInputException;
 
@@ -32,6 +39,45 @@ public class EditorUtils {
 	public static final String NEWLINE = System.getProperty("line.separator");
 	public static final String COMMA = ", ";
 	public static final String TAB = "\t";
+
+	static public ISourceRange getActiveFunctionClauseRange()
+			throws ErlModelException {
+		if (getActiveElement() instanceof IErlFunctionClause) {
+			IErlMember m = (IErlMember) getActiveElement();
+			return m.getSourceRange();
+		}
+		return null;
+	}
+
+	// TODO: error handling: if no member is selected
+
+	static public String getActiveFunctionClause() throws BadLocationException,
+			ErlModelException {
+		ITextEditor editor = getEditor();
+		IDocumentProvider dp = editor.getDocumentProvider();
+		IDocument doc = dp.getDocument(editor.getEditorInput());
+		if (getActiveFunctionClauseRange() == null)
+			return null;
+		return doc.get(getActiveFunctionClauseRange().getOffset(),
+				getActiveFunctionClauseRange().getLength());
+	}
+
+	static protected IErlElement getActiveElement() {
+
+		IErlModule module = ErlangCore.getModel().findModule(getFileName());
+
+		try {
+			IErlElement element = module
+					.getElementAt(getActiveSelectionOffset());
+			if (element == null)
+				return module;
+			else
+				return element;
+
+		} catch (ErlModelException e) {
+		}
+		return module;
+	}
 
 	/**
 	 * Returns the actual position of the cursor in a text editor
@@ -88,6 +134,29 @@ public class EditorUtils {
 	 */
 	static public void insertText(String text, int offset) {
 		insertText(text, "", offset, 0);
+	}
+
+	static public void insertText(InsertionStringPair s) {
+		int offset;
+		try {
+			switch (s.position) {
+			case BEFORE:
+				offset = getActiveFunctionClauseRange().getOffset();
+				break;
+			case AFTER:
+				offset = getActiveFunctionClauseRange().getOffset()
+						+ getActiveFunctionClauseRange().getLength();
+				break;
+			default:
+				offset = getActiveSelectionOffset();
+			}
+		} catch (Exception e) {
+			offset = getActiveSelectionOffset();
+		}
+		if (!s.second.equals(""))
+			EditorUtils.insertText(s.first, s.second + EditorUtils.NEWLINE);
+		else
+			EditorUtils.insertText(s.first + EditorUtils.NEWLINE, offset);
 	}
 
 	/**
@@ -215,9 +284,9 @@ public class EditorUtils {
 	 * @throws NullInputException
 	 *             if the user press cancel in the input dialog
 	 */
-	public static StringPair compassWithMacro(String name, String title,
-			OrdinalNumber originalOrdinalNumber, String... parameters)
-			throws NullInputException {
+	public static InsertionStringPair compassWithMacro(String name,
+			String title, OrdinalNumber originalOrdinalNumber,
+			String... parameters) throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
 		String after = "";
 		String before = "";
@@ -241,7 +310,7 @@ public class EditorUtils {
 			}
 		}
 		after += ")";
-		return new StringPair(before, after);
+		return new InsertionStringPair(before, after);
 
 	}
 
@@ -254,7 +323,7 @@ public class EditorUtils {
 	 * @return
 	 * @throws NullInputException
 	 */
-	public static StringPair compassWithMacro(String name, String title)
+	public static InsertionStringPair compassWithMacro(String name, String title)
 			throws NullInputException {
 		return compassWithMacro(name, title, new String[0]);
 	}
@@ -273,8 +342,8 @@ public class EditorUtils {
 	 * @throws NullInputException
 	 *             if the user press cancel in the inpu dialog
 	 */
-	public static StringPair compassWithMacro(String name, String title,
-			String... parameters) throws NullInputException {
+	public static InsertionStringPair compassWithMacro(String name,
+			String title, String... parameters) throws NullInputException {
 		return compassWithMacro(name, title, OrdinalNumber.Last, parameters);
 	}
 

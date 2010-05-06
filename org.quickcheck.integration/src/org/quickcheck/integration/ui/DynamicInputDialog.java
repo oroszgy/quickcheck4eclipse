@@ -21,11 +21,22 @@ import org.eclipse.ui.internal.Workbench;
 
 public class DynamicInputDialog extends Dialog {
 
+	/**
+	 * Runs a dynamic input dialog, with the given paramters and title
+	 * 
+	 * @param title
+	 *            Dialog title
+	 * @param parameterNames
+	 *            parameters to get
+	 * @return
+	 * @throws NullInputException
+	 *             if the user press cancel button
+	 */
 	public static ArrayList<String> run(String title, String... parameterNames)
 			throws NullInputException {
 		Shell parent = Workbench.getInstance().getActiveWorkbenchWindow()
 				.getShell();
-		Shell shell = new Shell(parent);
+		Shell shell = parent;
 		ArrayList<String> par = new ArrayList<String>();
 		for (String s : parameterNames) {
 			par.add(s);

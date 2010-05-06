@@ -6,17 +6,17 @@ import org.quickcheck.integration.ui.DynamicInputDialog;
 import org.quickcheck.integration.ui.NullInputException;
 import org.quickcheck.integration.utils.EditorUtils;
 import org.quickcheck.integration.utils.OrdinalNumber;
-import org.quickcheck.integration.utils.StringPair;
+import org.quickcheck.integration.utils.InsertionStringPair;
 
 public class GeneratorsHandler extends AbstractQuickCheckHandler {
 
 	@Override
-	protected StringPair getInsertionString(String id)
+	protected InsertionStringPair getInsertionString(String id)
 			throws NullInputException {
 		String before = "";
 		String after = "";
 		ArrayList<String> input;
-		StringPair ret = null;
+		InsertionStringPair ret = null;
 		if (id.equals("sizedgenerator")) {
 			input = DynamicInputDialog.run("Sized generator", "Generator name");
 			before = input.get(0) + "() ->" + EditorUtils.NEWLINE;
@@ -187,6 +187,6 @@ public class GeneratorsHandler extends AbstractQuickCheckHandler {
 		}
 		if (ret != null)
 			return ret;
-		return new StringPair(before, after);
+		return new InsertionStringPair(before, after);
 	}
 }
