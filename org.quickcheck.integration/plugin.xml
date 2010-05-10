@@ -279,6 +279,105 @@
 		<command categoryId="org.quickcheck.categories.statemachinespecs"
 			id="org.quickcheck.statemachinespecs.zip" name="Function zip">
 		</command>
+	
+	<category id="org.quickcheck.categories.fsmspecs" name="Properties">
+		</category>	
+	<command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.completeeqc_fsm spec"
+		 name ="Complete eqc_fsm spec">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.fulleqc_fsm module header"
+		 name ="Full eqc_fsm module header">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.includeeqc_fsm"
+		 name ="Include eqc_fsm">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.initial_state"
+		 name ="initial_state">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.initial_state_data"
+		 name ="initial_state_data">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.next_state_data"
+		 name ="next_state_data">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.precondition"
+		 name ="precondition">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.postcondition"
+		 name ="postcondition">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.fsmproperty"
+		 name ="FSM Property">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.transitionweight"
+		 name ="Transition weight">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.symbolicfunctioncall"
+		 name ="Symbolic function call">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.duplicatefunctionclause"
+		 name ="Duplicate function clause">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.duplicatefunctionclauseheader"
+		 name ="Duplicate function clause header">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionanalyze"
+		 name ="Function analyze">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionautomate_weights1"
+		 name ="Function automate_weights/1">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionautomate_weights2"
+		 name ="Function automate_weights/2">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functioncommands1"
+		 name ="Function commands/1">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functioncommands2"
+		 name ="Function commands/2">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functiondot"
+		 name ="Function dot">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionrun_commands/2"
+		 name ="Function run_commands/2">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionrun_commands/3"
+		 name ="Function run_commands/3">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionstate_names"
+		 name ="Function state_names">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionvisualize1"
+		 name ="Function visualize/1">
+	</command>
+           <command categoryId="org.quickcheck.categories.fsmspecs"
+		 id="org.quickcheck.fsmspecs.functionvisualize2"
+		 name ="Function visualize/2">
+	</command>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler class="org.quickcheck.integration.handlers.PropertiesHandler"
@@ -565,6 +664,80 @@
 			class="org.quickcheck.integration.handlers.StateMachineSpecsHandler"
 			commandId="org.quickcheck.statemachinespecs.zip">
 		</handler>
+		
+		
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.completeeqc_fsm spec">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.fulleqc_fsm module header">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.includeeqc_fsm">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.initial_state">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.initial_state_data">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.next_state_data">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.precondition">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.postcondition">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.fsmproperty">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.transitionweight">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.symbolicfunctioncall">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.duplicatefunctionclause">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.duplicatefunctionclauseheader">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionanalyze">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionautomate_weights1">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionautomate_weights2">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionhandlers1">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionhandlers2">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functiondot">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionrun_handlers/2">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionrun_handlers/3">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionstate_names">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionvisualize1">
+	</handler>
+           <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
+		 commandId="org.quickcheck.fsmspecs.functionvisualize2">
+	</handler>		
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=additions">
@@ -816,10 +989,100 @@
 					</command>
 				</menu>
 				<menu label="Final state machine (FSM) specs" mnemonic="F">
+	<command style="push"
+		 commandId="org.quickcheck.fsmspecs.completeeqc_fsm spec">
+	</command>
+	<separator
+       name="org.quickcheck.menu.fsmspecs.separator0"
+       visible="true">
+	</separator>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.fulleqc_fsm module header">
+	</command>
+	<separator
+       name="org.quickcheck.menu.fsmspecs.separator1"
+       visible="true">
+	</separator>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.includeeqc_fsm">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.initial_state">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.initial_state_data">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.next_state_data">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.precondition">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.postcondition">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.fsmproperty">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.transitionweight">
+	</command>
+	<separator
+       name="org.quickcheck.menu.fsmspecs.separator2"
+       visible="true">
+	</separator>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.symbolicfunctioncall">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.duplicatefunctionclause">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.duplicatefunctionclauseheader">
+	</command>
+	<separator
+       name="org.quickcheck.menu.fsmspecs.separator3"
+       visible="true">
+	</separator>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionanalyze">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionautomate_weights1">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionautomate_weights2">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionhandlers1">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionhandlers2">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functiondot">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionrun_handlers/2">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionrun_handlers/3">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionstate_names">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionvisualize1">
+	</command>
+           <command style="push"
+		 commandId="org.quickcheck.fsmspecs.functionvisualize2">
+	</command>
 				</menu>
 				<menu label="C code specifications" mnemonic="c">
 				</menu>
-				<separator name="org.quickcheck.menu.separator0">
+				<separator
+          name="org.quickcheck.menu.separator0"
+          visible="true">
 				</separator>
 				<menu label="Version" mnemonic="v">
 				</menu>
