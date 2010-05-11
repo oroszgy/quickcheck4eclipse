@@ -283,11 +283,11 @@
 	<category id="org.quickcheck.categories.fsmspecs" name="Properties">
 		</category>	
 	<command categoryId="org.quickcheck.categories.fsmspecs"
-		 id="org.quickcheck.fsmspecs.completeeqc_fsm spec"
+		 id="org.quickcheck.fsmspecs.completeeqc_fsmspec"
 		 name ="Complete eqc_fsm spec">
 	</command>
            <command categoryId="org.quickcheck.categories.fsmspecs"
-		 id="org.quickcheck.fsmspecs.fulleqc_fsm module header"
+		 id="org.quickcheck.fsmspecs.fulleqc_fsmmoduleheader"
 		 name ="Full eqc_fsm module header">
 	</command>
            <command categoryId="org.quickcheck.categories.fsmspecs"
@@ -667,10 +667,10 @@
 		
 		
            <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
-		 commandId="org.quickcheck.fsmspecs.completeeqc_fsm spec">
+		 commandId="org.quickcheck.fsmspecs.completeeqc_fsmspec">
 	</handler>
            <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
-		 commandId="org.quickcheck.fsmspecs.fulleqc_fsm module header">
+		 commandId="org.quickcheck.fsmspecs.fulleqc_fsmmoduleheader">
 	</handler>
            <handler class="org.quickcheck.integration.handlers.FSMSpecsHandler"
 		 commandId="org.quickcheck.fsmspecs.includeeqc_fsm">
@@ -990,14 +990,14 @@
 				</menu>
 				<menu label="Final state machine (FSM) specs" mnemonic="F">
 	<command style="push"
-		 commandId="org.quickcheck.fsmspecs.completeeqc_fsm spec">
+		 commandId="org.quickcheck.fsmspecs.completeeqc_fsmspec">
 	</command>
 	<separator
        name="org.quickcheck.menu.fsmspecs.separator0"
        visible="true">
 	</separator>
            <command style="push"
-		 commandId="org.quickcheck.fsmspecs.fulleqc_fsm module header">
+		 commandId="org.quickcheck.fsmspecs.fulleqc_fsmmoduleheader">
 	</command>
 	<separator
        name="org.quickcheck.menu.fsmspecs.separator1"

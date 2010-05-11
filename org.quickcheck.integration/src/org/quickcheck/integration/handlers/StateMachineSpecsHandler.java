@@ -37,7 +37,7 @@ import org.quickcheck.integration.utils.EditorUtils;
 import org.quickcheck.integration.utils.InsertionStringPair;
 import org.quickcheck.integration.utils.InsertionStringPair.Position;
 
-public class StateMachineSpecsHandler extends AbstractQuickCheckHandler
+public class StateMachineSpecsHandler extends AbstractQuickCheckSpecsHandler
 		implements IHandler {
 
 	@Override
@@ -115,18 +115,9 @@ public class StateMachineSpecsHandler extends AbstractQuickCheckHandler
 			ret = getSMProperty(input.get(0), input.get(1), EditorUtils
 					.getActiveSelectionLength() == 0);
 		} else if (id.equals("symbolicfunctioncall")) {
-			input = DynamicInputDialog.run("Smybolic function call",
-					"Module name [?MODULE]", "Function name");
-			before = "{call" + EditorUtils.COMMA + input.get(0)
-					+ EditorUtils.COMMA + "[";
-			after = "]}";
+			ret = getSymbolicFunctionCall();
 		} else if (id.equals("duplicatefunctionclause")) {
-			String s = EditorUtils.getActiveFunctionClause();
-			if (s.equals(null))
-				throw new NullInputException();
-			s = s.replace(".", ";");
-			before += s;
-			ret = new InsertionStringPair(before, "", Position.BEFORE);
+			ret = getDuplicateFunctionClause();
 		} else if (id.equals("duplicatefunctionclauseheader")) {
 			String s = EditorUtils.getActiveFunctionClause();
 			if (s.equals(null))
@@ -135,23 +126,24 @@ public class StateMachineSpecsHandler extends AbstractQuickCheckHandler
 			before += s;
 			ret = new InsertionStringPair(before, "", Position.BEFORE);
 		} else if (id.equals("commands1")) {
-			EditorUtils.createMacro("commands/1", "Function commands/1",
-					"Module");
+			before += EditorUtils.createCall("commands/1",
+					"Function commands/1", "Module");
 		} else if (id.equals("commands2")) {
-			EditorUtils.createMacro("commands/2", "Function commands/2",
-					"Module", "Initial state");
+			before += EditorUtils.createCall("commands/2",
+					"Function commands/2", "Module", "Initial state");
 		} else if (id.equals("more_commands")) {
-			EditorUtils.compassWithMacro("more_commands",
+			before += EditorUtils.compassWith("more_commands",
 					"Function more_commands", "Increase by factor");
 		} else if (id.equals("run_commands2")) {
-			EditorUtils.createMacro("run_commands/2",
+			before += EditorUtils.createCall("run_commands/2",
 					"Function run_commands/2", "Module", "List of commands");
 		} else if (id.equals("run_commands3")) {
-			EditorUtils.createMacro("run_commands/3",
+			before += EditorUtils.createCall("run_commands/3",
 					"Function run_commands/3", "Module", "Environment",
 					"List of commands");
 		} else if (id.equals("zip")) {
-			EditorUtils.createMacro("zip", "Function zip", "List 1", "List 2");
+			before += EditorUtils.createCall("zip", "Function zip", "List 1",
+					"List 2");
 		}
 		if (ret != null)
 			return ret;
@@ -164,33 +156,5 @@ public class StateMachineSpecsHandler extends AbstractQuickCheckHandler
 		before += "initial_state() ->";
 		before += EditorUtils.TAB + "#" + record + "{}.";
 		return before;
-	}
-
-	protected static InsertionStringPair getSMProperty(String name,
-			String module, boolean hasNotSelection) {
-		String before;
-		before = "prop_" + name + "() ->" + EditorUtils.NEWLINE;
-		before += EditorUtils.TAB + "?FORALL(Cmds,commands(" + module + "),"
-				+ EditorUtils.NEWLINE;
-		before += EditorUtils.TAB + EditorUtils.TAB + "begin"
-				+ EditorUtils.NEWLINE;
-		before += EditorUtils.TAB + EditorUtils.TAB + EditorUtils.TAB
-				+ "{H,S,Res} = run_commands(" + module + ",Cmds),"
-				+ EditorUtils.NEWLINE;
-		before += EditorUtils.TAB + EditorUtils.TAB + EditorUtils.TAB
-				+ "?WHENFAIL(" + EditorUtils.NEWLINE;
-		before += EditorUtils.TAB
-				+ EditorUtils.TAB
-				+ EditorUtils.TAB
-				+ EditorUtils.TAB
-				+ "io:format(\"History: ~p\\nState: ~p\\nRes: ~p\\n\",[H,S,Res]),";
-		if (hasNotSelection)
-			before += EditorUtils.NEWLINE + EditorUtils.TAB + EditorUtils.TAB
-					+ EditorUtils.TAB + EditorUtils.TAB + "Res == ok";
-		else
-			before += EditorUtils.NEWLINE;
-		String after = ")" + EditorUtils.NEWLINE;
-		after += "end).";
-		return new InsertionStringPair(before, after);
 	}
 }

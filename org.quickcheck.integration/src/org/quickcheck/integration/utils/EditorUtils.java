@@ -308,9 +308,9 @@ public class EditorUtils {
 	 * @throws NullInputException
 	 *             if the user press cancel in the input dialog
 	 */
-	public static InsertionStringPair compassWithMacro(String name,
-			String title, OrdinalNumber originalOrdinalNumber,
-			String... parameters) throws NullInputException {
+	public static InsertionStringPair compassWith(String name, String title,
+			OrdinalNumber originalOrdinalNumber, String... parameters)
+			throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
 		String after = "";
 		String before = "";
@@ -339,22 +339,23 @@ public class EditorUtils {
 	}
 
 	/**
-	 * Compass the current selection with the given macro
+	 * Compass the current selection with the given macro or function
 	 * 
 	 * @param name
-	 *            macro name
+	 *            macro / function name
 	 * @param title
 	 * @return
 	 * @throws NullInputException
 	 */
-	public static InsertionStringPair compassWithMacro(String name, String title)
+	public static InsertionStringPair compassWith(String name, String title)
 			throws NullInputException {
-		return compassWithMacro(name, title, new String[0]);
+		return compassWith(name, title, new String[0]);
 	}
 
 	/**
-	 * Compass the current selection with the given macro name and parameters.
-	 * The original selection will be the last parameter in the macro.
+	 * Compass the current selection with the given macro or function name and
+	 * parameters. The original selection will be the last parameter in the
+	 * macro.
 	 * 
 	 * @param name
 	 *            macro name
@@ -364,41 +365,47 @@ public class EditorUtils {
 	 *            macro parameters
 	 * @return
 	 * @throws NullInputException
-	 *             if the user press cancel in the inpu dialog
+	 *             if the user press cancel in the input dialog
 	 */
-	public static InsertionStringPair compassWithMacro(String name,
-			String title, String... parameters) throws NullInputException {
-		return compassWithMacro(name, title, OrdinalNumber.Last, parameters);
+	public static InsertionStringPair compassWith(String name, String title,
+			String... parameters) throws NullInputException {
+		return compassWith(name, title, OrdinalNumber.Last, parameters);
 	}
 
 	/**
-	 * Creates a macro with the given name and parameters
+	 * Creates a macro or function call with the given name and parameters
 	 * 
 	 * @param name
-	 *            macro name
+	 *            macro/function name
 	 * @param title
 	 *            input dialog box title
 	 * @param parameters
-	 *            macro parameters name
+	 *            macro/function parameters name
 	 * @return
 	 * @throws NullInputException
 	 *             if the user press the cancel button in the input dialog
 	 */
-	public static String createMacro(String name, String title,
+	public static String createCall(String name, String title,
 			String... parameters) throws NullInputException {
 		ArrayList<String> input = new ArrayList<String>();
 		if (parameters != null && parameters.length > 0)
 			input = DynamicInputDialog.run(title, parameters);
 		String ret = name + "(";
-		for (String s : input)
-			ret += s + EditorUtils.COMMA;
+		for (int i = 0; i < input.size(); ++i) {
+			String s = input.get(i);
+			ret += s;
+			if (i < input.size() - 1)
+				ret += EditorUtils.COMMA;
+		}
+
 		// ret += EditorUtils.NEWLINE + EditorUtils.TAB;
 		ret += ")";
 		return ret;
 	}
 
 	/**
-	 * Creates a single macro with the given name, without any parameters
+	 * Creates a single macro or function call with the given name, without any
+	 * parameters
 	 * 
 	 * @param name
 	 *            macro name
@@ -406,9 +413,9 @@ public class EditorUtils {
 	 * @return
 	 * @throws NullInputException
 	 */
-	public static String createMacro(String name, String title)
+	public static String createCall(String name, String title)
 			throws NullInputException {
-		return createMacro(name, title, new String[0]);
+		return createCall(name, title, new String[0]);
 
 	}
 

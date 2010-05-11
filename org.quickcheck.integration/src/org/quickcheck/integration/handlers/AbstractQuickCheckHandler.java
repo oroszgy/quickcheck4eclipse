@@ -57,6 +57,14 @@ public abstract class AbstractQuickCheckHandler extends AbstractHandler {
 		return "-compile(export_all).";
 	}
 
+	public static String getIncludeEqcFSM() {
+		return "-include_lib(\"eqc/include/eqc_fsm.hrl\").";
+	}
+
+	public static String getIncludeEqcStatem() {
+		return "-include_lib(\"eqc/include/eqc_statem.hrl\").";
+	}
+
 	@Override
 	/**
 	 * the command has been executed, so extract extract the needed information
@@ -79,9 +87,5 @@ public abstract class AbstractQuickCheckHandler extends AbstractHandler {
 
 	protected abstract InsertionStringPair getInsertionString(String id)
 			throws NullInputException, ErlModelException, BadLocationException;
-
-	public String getIncludeEqcStatem() {
-		return "-include_lib(\"eqc/include/eqc_statem.hrl\").";
-	}
 
 }
