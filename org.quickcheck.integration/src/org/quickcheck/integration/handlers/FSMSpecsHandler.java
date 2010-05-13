@@ -149,10 +149,10 @@ public class FSMSpecsHandler extends AbstractQuickCheckSpecsHandler implements
 					"Function commands/2", "Module", "Initial state");
 		} else if (id.equals("functiondot")) {
 			before = EditorUtils.createCall("dot", "Function dot", "Module");
-		} else if (id.equals("functionrun_commands/2")) {
+		} else if (id.equals("functionrun_commands2")) {
 			before = EditorUtils.createCall("run_commands/2",
 					"Function run_commands/2", "Module", "List of commands");
-		} else if (id.equals("functionrun_commands/3")) {
+		} else if (id.equals("functionrun_commands3")) {
 			before = EditorUtils.createCall("run_commands/3",
 					"Function run_commands/2", "Module", "List of commands",
 					"Environment");
