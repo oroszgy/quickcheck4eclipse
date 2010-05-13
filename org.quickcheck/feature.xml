@@ -2,7 +2,8 @@
 <feature
       id="org.quickcheck"
       label="QuickCheck for Eclipse"
-      version="0.1.0.qualifier">
+      version="0.2.0.qualifier"
+      plugin="org.quickcheck.integration">
 
    <description>
       QuickCheck integration for Eclipse
@@ -39,8 +40,7 @@ THE SOFTWARE.
    </copyright>
 
    <license url="http://opensource.org/licenses/mit-license.php">
-      Copyright (c) 2010, György Orosz
-Permission is hereby granted, free of charge, to any person obtaining
+      Permission is hereby granted, free of charge, to any person obtaining
 a copy
 of this software and associated documentation files (the &quot;Software&quot;),
 to deal
@@ -79,7 +79,6 @@ THE SOFTWARE.
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.erlide.core" version="0.7.5" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.5.2" match="greaterOrEqual"/>
-      <import plugin="org.erlide.ui"/>
    </requires>
 
    <plugin
