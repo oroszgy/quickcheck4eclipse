@@ -2,8 +2,7 @@
 <feature
       id="org.quickcheck"
       label="QuickCheck for Eclipse"
-      version="0.2.0.qualifier"
-      plugin="org.quickcheck.integration">
+      version="0.2.0.qualifier">
 
    <description>
       QuickCheck integration for Eclipse

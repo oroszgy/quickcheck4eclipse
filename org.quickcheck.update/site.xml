@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.quickcheck_0.2.0.201005131220.jar" id="org.quickcheck" version="0.2.0.201005131220">
+   <feature url="features/org.quickcheck_0.2.0.201005131335.jar" id="org.quickcheck" version="0.2.0.201005131335">
       <category name="testing"/>
    </feature>
    <category-def name="testing" label="testing"/>
