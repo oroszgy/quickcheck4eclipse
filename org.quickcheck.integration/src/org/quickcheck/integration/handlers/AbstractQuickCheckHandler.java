@@ -29,9 +29,9 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.text.BadLocationException;
 import org.erlide.core.erlang.ErlModelException;
-import org.quickcheck.integration.ui.NullInputException;
-import org.quickcheck.integration.utils.EditorUtils;
-import org.quickcheck.integration.utils.InsertionStringPair;
+import org.protest.integration.lib.textutils.EditorUtils;
+import org.protest.integration.lib.textutils.InsertionStringPair;
+import org.protest.integration.lib.ui.NullInputException;
 
 public abstract class AbstractQuickCheckHandler extends AbstractHandler {
 

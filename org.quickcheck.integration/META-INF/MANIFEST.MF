@@ -7,9 +7,8 @@ Bundle-Activator: org.quickcheck.integration.Activator
 Bundle-Vendor: QuviQ AB
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
+ org.protest.integration.lib;bundle-version="0.1.0",
  org.eclipse.jface.text;bundle-version="3.5.2",
- org.eclipse.ui.editors;bundle-version="3.5.0",
- org.erlide.core;bundle-version="0.7.5",
- org.eclipse.core.resources;bundle-version="3.5.2"
+ org.erlide.core;bundle-version="0.7.5"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

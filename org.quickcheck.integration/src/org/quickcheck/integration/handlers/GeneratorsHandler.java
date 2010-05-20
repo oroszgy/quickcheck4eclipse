@@ -26,11 +26,11 @@ package org.quickcheck.integration.handlers;
 
 import java.util.ArrayList;
 
-import org.quickcheck.integration.ui.DynamicInputDialog;
-import org.quickcheck.integration.ui.NullInputException;
-import org.quickcheck.integration.utils.EditorUtils;
-import org.quickcheck.integration.utils.OrdinalNumber;
-import org.quickcheck.integration.utils.InsertionStringPair;
+import org.protest.integration.lib.textutils.EditorUtils;
+import org.protest.integration.lib.textutils.InsertionStringPair;
+import org.protest.integration.lib.textutils.OrdinalNumber;
+import org.protest.integration.lib.ui.DynamicInputDialog;
+import org.protest.integration.lib.ui.NullInputException;
 
 public class GeneratorsHandler extends AbstractQuickCheckHandler {
 
