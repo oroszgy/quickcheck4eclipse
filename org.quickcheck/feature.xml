@@ -2,7 +2,8 @@
 <feature
       id="org.quickcheck"
       label="QuickCheck for Eclipse"
-      version="0.2.0.qualifier">
+      version="0.2.0.qualifier"
+      provider-name="ProTest Consortium">
 
    <description>
       QuickCheck integration for Eclipse
@@ -69,6 +70,8 @@ THE SOFTWARE.
 
    <url>
       <discovery label="Project page" url="http://github.com/oroszgy/quickcheck4eclipse"/>
+      <discovery label="QuickCheck home" url="http://www.quviq.com"/>
+      <discovery label="ProTest project site" url="http://www.protest-project.eu/"/>
    </url>
 
    <requires>
