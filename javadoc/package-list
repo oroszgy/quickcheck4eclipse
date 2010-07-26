@@ -1,0 +1,5 @@
+org.protest.integration.lib
+org.protest.integration.lib.textutils
+org.protest.integration.lib.ui
+org.quickcheck.integration
+org.quickcheck.integration.handlers
